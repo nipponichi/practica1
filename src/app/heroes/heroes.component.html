@@ -1,0 +1,11 @@
+<h2>Detalles de {{ hero.name }}</h2>
+<div><span>Id: </span>{{ hero.id }}</div>
+<div><span>Nombre: </span>{{ hero.name }}</div>
+<div>
+    <form [formGroup]="formAngular" (submit)="submitApplication()">
+        <label for="name">Nombre1: </label>
+        <input id="name" type="text" placeholder="Nombre1" formControlName="heroName">
+        <button type="submit" class="primary">send</button>
+    </form>
+    <h3>{{ hero.name }}</h3>
+</div>
