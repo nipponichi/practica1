@@ -1,0 +1,5 @@
+<app-radio-button></app-radio-button>
+<!--Weight-->
+<app-slider (datoEnviado)="recibirDato1($event)" [min]="15" [max]="225" [step]="1"></app-slider>
+<app-slider (datoEnviado)="recibirDato2($event)" [min]="15" [max]="150" [step]=".5"></app-slider>
+<p>IMC: {{ result }}</p>

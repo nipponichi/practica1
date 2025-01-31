@@ -1,3 +1,3 @@
 export interface slider {
-    'value': string
+    'value': number
 }

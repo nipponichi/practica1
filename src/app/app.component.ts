@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
-//import { RouterOutlet } from '@angular/router';
-import { HeroesComponent } from './heroes/heroes.component';
 import { FormsModule } from '@angular/forms';
-import { SliderComponent } from './slider/slider.component';
+import { CalculatorComponent } from "./calculator/calculator.component";
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [HeroesComponent, FormsModule, SliderComponent],
+  imports: [FormsModule, CalculatorComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
