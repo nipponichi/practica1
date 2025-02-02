@@ -1,7 +1,8 @@
-<h3>{{ slider.value }}</h3>
 <form [formGroup]="formAngular2">
-    <mat-slider [min]="min" [max]="max" [step]="step" showTickMarks discrete [displayWith]="formatLabelAge" (input)="onSliderChangeAge($event)">
+    <mat-slider [min]="min" [max]="max" [step]="step"
+    [displayWith]="formatLabel" (input)="onSliderChange($event)">
         <input matSliderThumb [value]="slider.value">
     </mat-slider>
-    <input type="text" formControlName="inputValue" [value]="slider.value">
+    <input type="number" formControlName="inputValue" [value]="slider.value"
+        [min]="min" [max]="max" pattern="[0-9]" inputmode="numeric"> {{ unit }} 
 </form>

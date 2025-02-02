@@ -1,5 +1,28 @@
-<app-radio-button></app-radio-button>
-<!--Weight-->
-<app-slider (datoEnviado)="recibirDato1($event)" [min]="15" [max]="225" [step]="1"></app-slider>
-<app-slider (datoEnviado)="recibirDato2($event)" [min]="15" [max]="150" [step]=".5"></app-slider>
-<p>IMC: {{ result }}</p>
+<div>
+    <input type="text" [value]="imc.name" (input)="updateName($event)" placeholder="nombre">
+</div>
+<div>
+    <input type="date" [value]="imc.date" (input)="updateDate($event)">
+</div>
+
+<app-radio-button option1Label="Masculino" option2Label="Femenino" 
+    [option1Value]="true" [option2Value]="false" (value)="setGender($event)">
+</app-radio-button>
+
+<div>
+    <Label>Height</Label>
+    <app-slider (datoEnviado)="recibirDato1($event)" [min]="15" [max]="225" [step]="1" unit="cm"></app-slider>
+</div>
+
+<div>
+    <Label>Height</Label>
+    <app-slider (datoEnviado)="recibirDato2($event)" [min]="15" [max]="150" [step]=".5" unit="kg"></app-slider>
+</div>
+
+<div>
+    <button (click)="saveRegister()">Guardar</button>
+</div>
+
+<div>
+    <p>IMC: {{ imc.result }}</p>
+</div>

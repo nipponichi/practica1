@@ -1,0 +1,22 @@
+<table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Fecha</th>
+        <th>Altura (m)</th>
+        <th>Peso (kg)</th>
+        <th>IMC</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of imcList; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ record.name }}</td>
+        <td>{{ record.date }}</td>
+        <td>{{ record.height }}</td>
+        <td>{{ record.weight }}</td>
+        <td>{{ record.result }}</td>
+      </tr>
+    </tbody>
+  </table>
