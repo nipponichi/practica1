@@ -2,21 +2,21 @@
     <thead>
       <tr>
         <th>#</th>
-        <th>Nombre</th>
-        <th>Fecha</th>
-        <th>Altura (m)</th>
-        <th>Peso (kg)</th>
+        <th>Name</th>
+        <th>Height (m)</th>
+        <th>Weight (kg)</th>
         <th>IMC</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let record of imcList; let i = index">
+      <tr *ngFor="let imc of imcList; let i = index">
         <td>{{ i + 1 }}</td>
-        <td>{{ record.name }}</td>
-        <td>{{ record.date }}</td>
-        <td>{{ record.height }}</td>
-        <td>{{ record.weight }}</td>
-        <td>{{ record.result }}</td>
+        <td>{{ imc.name }}</td>
+        <td>{{ imc.height }}</td>
+        <td>{{ imc.weight }}</td>
+        <td>{{ imc.result }}</td>
       </tr>
     </tbody>
   </table>
+
+  

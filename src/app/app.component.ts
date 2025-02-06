@@ -16,7 +16,6 @@ export class AppComponent {
     height: 0,
     weight: 0,
     isMale: true,
-    date: '',
     result: ''
   };
 

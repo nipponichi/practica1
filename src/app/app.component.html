@@ -1,3 +1,5 @@
 <h1>{{ title }}</h1>
-<app-calculator (imcSave)="updateIMC($event)"></app-calculator>
-<app-register [imc]="imc"></app-register>
+<div class="content">
+    <app-calculator (imcSave)="updateIMC($event)"></app-calculator>
+    <app-register [imc]="imc"></app-register>
+</div>
