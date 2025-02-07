@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CalculatorComponent } from "./calculator/calculator.component";
-import { imc } from './calculator/imc.model';
+import { Imc } from './calculator/imc.model';
 import { RegisterComponent } from './register/register.component';
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ import { RegisterComponent } from './register/register.component';
 })
 export class AppComponent {
   title = 'practica1';
-  public imc: imc = {
+  public imc: Imc = {
     name: '',
     height: 0,
     weight: 0,
@@ -19,7 +19,7 @@ export class AppComponent {
     result: ''
   };
 
-  updateIMC(newImc: imc) {
+  updateIMC(newImc: Imc) {
     this.imc = { ...newImc };
   }
 }

@@ -1,4 +1,4 @@
-export interface imc {
+export interface Imc {
     name: string,
     isMale: boolean,
     height: number,

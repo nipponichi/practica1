@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { NgFor } from '@angular/common';
-import { imc } from '../calculator/imc.model';
+import { Imc } from '../calculator/imc.model';
 
 @Component({
   selector: 'app-register',
@@ -9,9 +9,9 @@ import { imc } from '../calculator/imc.model';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnChanges {
-  @Input() imc!: imc;
+  @Input() imc!: Imc;
 
-  public imcList: imc[] = [];
+  public imcList: Imc[] = [];
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['imc'] && changes['imc'].currentValue) {
@@ -23,7 +23,7 @@ export class RegisterComponent implements OnChanges {
     }
   }
 
-  addRegister(newImc: imc) {
+  addRegister(newImc: Imc) {
     this.imcList = [...this.imcList, { ...newImc }];
     console.log("Lista actualizada:", this.imcList);
   }

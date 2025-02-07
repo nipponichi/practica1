@@ -5,7 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { imc } from './imc.model';
+import { Imc } from './imc.model';
 
 @Component({
   selector: 'app-calculator',
@@ -19,7 +19,7 @@ export class CalculatorComponent {
   @ViewChild('heightSlider') heightSlider!: SliderComponent;
   @ViewChild('weightSlider') weightSlider!: SliderComponent;
 
-  public imc: imc = {
+  public imc: Imc = {
     name: '',
     isMale: true,
     height: 0,
@@ -120,5 +120,5 @@ export class CalculatorComponent {
     }
   }
 
-  @Output() imcSave = new EventEmitter<imc>();
+  @Output() imcSave = new EventEmitter<Imc>();
 }

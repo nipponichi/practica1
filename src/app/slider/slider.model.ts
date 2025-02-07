@@ -1,3 +1,3 @@
-export interface slider {
+export interface Slider {
     'value': number
 }

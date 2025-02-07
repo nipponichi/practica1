@@ -6,7 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { slider } from './slider.model';
+import { Slider } from './slider.model';
 
 @Component({
   selector: 'app-slider',
@@ -30,7 +30,7 @@ export class SliderComponent implements OnInit {
   @Input() unit: string = "Units";  
   @Input() value: string = "Quantity"
 
-  public slider: slider = { value: this.min };
+  public slider: Slider = { value: this.min };
 
   ngOnInit() {
     this.formAngular2.get('inputValue')?.valueChanges.subscribe(value => {

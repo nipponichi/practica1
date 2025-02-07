@@ -1,9 +1,0 @@
-.import { BrowserModule } from '@angular/platform-browser';button {
-  background-color:  #3F51B5;
-  color: white;
-}
-
-.red-button {
-  background-color:  #F44336;
-  color: white;
-}
