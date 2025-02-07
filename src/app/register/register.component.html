@@ -5,6 +5,7 @@
         <th>Name</th>
         <th>Height (m)</th>
         <th>Weight (kg)</th>
+        <th>Gender</th>
         <th>IMC</th>
       </tr>
     </thead>
@@ -14,6 +15,7 @@
         <td>{{ imc.name }}</td>
         <td>{{ imc.height }}</td>
         <td>{{ imc.weight }}</td>
+        <td>{{ imc.isMale ? 'M' : 'F' }}</td>
         <td>{{ imc.result }}</td>
       </tr>
     </tbody>
