@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 })
 export class AppComponent {
   title = 'practica1';
+  
   public imc: Imc = {
     name: '',
     height: 0,
@@ -19,7 +20,8 @@ export class AppComponent {
     result: ''
   };
 
-  updateIMC(newImc: Imc) {
+  updateIMC(newImc: Imc): void {
     this.imc = { ...newImc };
   }
+  
 }

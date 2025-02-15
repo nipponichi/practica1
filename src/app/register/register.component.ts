@@ -13,7 +13,7 @@ export class RegisterComponent implements OnChanges {
 
   public imcList: Imc[] = [];
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges): void {
     if (changes['imc'] && changes['imc'].currentValue) {
       const newImc = changes['imc'].currentValue;
 
@@ -23,7 +23,7 @@ export class RegisterComponent implements OnChanges {
     }
   }
 
-  addRegister(newImc: Imc) {
+  addRegister(newImc: Imc): void {
     this.imcList = [...this.imcList, { ...newImc }];
   }
 }

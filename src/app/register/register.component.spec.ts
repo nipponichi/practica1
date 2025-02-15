@@ -1,30 +1,23 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { NgFor } from '@angular/common';
-import { Imc } from '../calculator/imc.model';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-@Component({
-  selector: 'app-register',
-  imports: [NgFor],
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
-})
-export class RegisterComponent implements OnChanges {
-  @Input() imc!: Imc;
+import { RegisterComponent } from './register.component';
 
-  public imcList: Imc[] = [];
+describe('RegisterComponent', () => {
+  let component: RegisterComponent;
+  let fixture: ComponentFixture<RegisterComponent>;
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['imc'] && changes['imc'].currentValue) {
-      const newImc = changes['imc'].currentValue;
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [RegisterComponent]
+    })
+    .compileComponents();
 
-      if (newImc.name !== "" && newImc.height > 0 && newImc.weight > 0) {
-        this.addRegister(newImc);
-      }
-    }
-  }
+    fixture = TestBed.createComponent(RegisterComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-  addRegister(newImc: Imc) {
-    this.imcList = [...this.imcList, { ...newImc }];
-    console.log("Lista actualizada:", this.imcList);
-  }
-}
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

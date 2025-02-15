@@ -32,7 +32,7 @@ export class SliderComponent implements OnInit {
 
   public slider: Slider = { value: this.min };
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.formAngular2.get('inputValue')?.valueChanges.subscribe(value => {
       let numericValue = Number(value); 
       if (numericValue < this.min) {
@@ -61,20 +61,20 @@ export class SliderComponent implements OnInit {
     return `${value} ${this.unit}`;
   }
 
-  incrementValue() {
+  incrementValue(): void {
     if (this.slider.value < this.max) { 
       this.slider.value++;
     }
 
   }
 
-  reduceValue() {
+  reduceValue(): void {
     if (this.slider.value > this.min) { 
       this.slider.value--;
     }
   }
 
-  resetSlider() {
+  resetSlider(): void {
     this.slider.value = this.min;
     this.receivedData.emit(this.slider.value);
   }

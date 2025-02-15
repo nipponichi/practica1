@@ -27,29 +27,29 @@ export class CalculatorComponent {
     result: '',
   };
 
-  updateName(event: Event) {
+  updateName(event: Event): void {
     const inputElement = event.target as HTMLInputElement;
     this.imc.name = inputElement.value;
   }
 
   // Height
-  sendData1(value: number) {
+  sendData1(value: number): void {
     this.imc.height = value / 100;
     this.calculateIMC();
   }
 
   // Weight
-  sendData2(value: number) {
+  sendData2(value: number): void {
     this.imc.weight = value;
     this.calculateIMC();
   }
 
-  setGender(value: boolean) {
+  setGender(value: boolean): void {
     this.imc.isMale = value;
     this.calculateIMC();
   }
   
-  calculateIMC() {
+  calculateIMC(): void {
     if (this.imc.height > 0 && this.imc.weight > 0) {
       const imcResult = this.imc.weight / Math.pow(this.imc.height, 2);
       this.imc.result = `${imcResult.toFixed(2)} - ${this.getIMCCategory(imcResult)}`;
@@ -61,19 +61,19 @@ export class CalculatorComponent {
 
   getIMCCategory(imc: number): string {
     const ranges = this.imc.isMale ? [
-      { max: 18.9, label: "Underweight", class: "color-underweight" },
-      { max: 25.9, label: "Normal weight", class: "color-normal" },
-      { max: 30.9, label: "Overweight", class: "color-overweight" },
-      { max: 35.9, label: "Obesity Grade 1", class: "color-obesity1" },
-      { max: 40.9, label: "Obesity Grade 2", class: "color-obesity2" },
-      { max: Infinity, label: "Obesity Grade 3", class: "color-obesity3" }
+      { max: 18.9, label: "Underweight"},
+      { max: 25.9, label: "Normal weight"},
+      { max: 30.9, label: "Overweight"},
+      { max: 35.9, label: "Obesity Grade 1"},
+      { max: 40.9, label: "Obesity Grade 2"},
+      { max: Infinity, label: "Obesity Grade 3"}
     ] : [
-      { max: 18.4, label: "Underweight", class: "color-underweight" },
-      { max: 24.4, label: "Normal weight", class: "color-normal" },
-      { max: 29.4, label: "Overweight", class: "color-overweight" },
-      { max: 34.4, label: "Obesity Grade 1", class: "color-obesity1" },
-      { max: 39.4, label: "Obesity Grade 2", class: "color-obesity2" },
-      { max: Infinity, label: "Obesity Grade 3", class: "color-obesity3" }
+      { max: 18.4, label: "Underweight"},
+      { max: 24.4, label: "Normal weight"},
+      { max: 29.4, label: "Overweight"},
+      { max: 34.4, label: "Obesity Grade 1"},
+      { max: 39.4, label: "Obesity Grade 2"},
+      { max: Infinity, label: "Obesity Grade 3"}
     ];
 
     for (const range of ranges) {
@@ -92,7 +92,7 @@ export class CalculatorComponent {
     );
   }
 
-  saveRegister() {
+  saveRegister(): void {
     if (!this.validateIMC()) {
       alert("All the fields must have values");
       return;
@@ -101,7 +101,7 @@ export class CalculatorComponent {
     this.imcSave.emit(this.imc);
   }
 
-  resetForm() {
+  resetForm(): void {
     this.imc = {
       name: '',
       isMale: true,
@@ -112,12 +112,14 @@ export class CalculatorComponent {
 
     if (this.heightSlider) {
       this.heightSlider.resetSlider();
-      console.log(this.heightSlider);
+      //console.log(this.heightSlider);
     }
+
     if (this.weightSlider) {
       this.weightSlider.resetSlider();
-      console.log(this.heightSlider);
+      //console.log(this.heightSlider);
     }
+
   }
 
   @Output() imcSave = new EventEmitter<Imc>();
